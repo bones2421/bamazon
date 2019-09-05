@@ -31,7 +31,7 @@ var displayProducts = function(){
 		console.log(displayTable.toString());
 		purchasePrompt();
 	});
-}
+};
 
 function purchasePrompt(){
 	inquirer.prompt([
@@ -53,7 +53,7 @@ function purchasePrompt(){
  	var IDrequested = answers.ID;
  	purchaseOrder(IDrequested, quantityNeeded);
  });
-};
+}
 
 function purchaseOrder(ID, amtNeeded){
 	connection.query('Select * FROM products WHERE item_id = ' + ID, function(err,res){
