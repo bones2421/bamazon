@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bones2421/bamazon/issues"
   },
-  "homepage": "https://github.com/bones2421/bamazon#readme"
+  "homepage": "https://github.com/bones2421/bamazon#readme",
+  "devDependencies": {
+    "eslint": "^6.3.0"
+  }
 }
