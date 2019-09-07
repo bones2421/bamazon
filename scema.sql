@@ -1,28 +1,46 @@
-DROP DATABASE IF EXISTS bamazon;
+DROP database if exists bamazon;
 
 CREATE database bamazon;
 
-USE bamazon;
+use bamazon;
 
-CREATE TABLE products(
-	item_id INT(4) NOT NULL,
+CREATE TABLE Products(
+	item_id INT(10) AUTO_INCREMENT NOT NULL,
 	product_name VARCHAR(100) NOT NULL,
 	department_name VARCHAR(100) NOT NULL,
-	price DECIMAL(10,2) NOT NULL,
-	stock_quantity INT(20) NOT NULL,
-	PRIMARY KEY (item_id)
+	price DECIMAL(10,4) NOT NULL,
+	stock_quantity INT(10) NOT NULL,
+	PRIMARY KEY(item_id)
 );
 
-Select * FROM products;
+SELECT * FROM Products;
 
-INSERT INTO products (item_id, product_name, department_name, price, stock_quantity) 
-VALUES (101, "boots", "soccer", 79.99, 20),
-	   (212, "jerseys", "basketball", 99.99, 10),
-	   (313, "helmet", "football", 29.99, 5),
-	   (420, "sweater", "hockey", 129.99, 14),
-	   (504, "pants", "football", 39.99, 15),
-	   (619, "shorts", "soccer", 19.99, 19),
-	   (720, "gloves", "baseball", 49.99, 11),
-	   (808, "bats", "baseball", 69.99, 10),
-	   (913, "pucks", "hockey", 9.99, 19),
-	   (1009, "shoes", "basketball", 89.99, 17)
+INSERT INTO Products (
+	product_name, department_name, price, stock_quantity
+) VALUES
+	('Playstation 3', 'Electronics', 270.00, 100),
+	('Kindle', 'Books', 80.00, 80),
+	('Nook', 'Books', 100.95, 90),
+	('SORRY!', 'Entertaiment', 10.00, 75),
+	('Apples To Apples Junior', 'Entertaiment', 14.90, 35),
+	('X-Box One', 'Electronics', 399.99, 10000),
+	('Drapey Lux Maxi Dress', 'Clothing', 65.99, 65),
+	('Purple FLower Floral Skirt', 'Clothing', 35.95, 25),
+	('The Fate of the Furious 8', 'Entertaiment', 20.95, 200),
+	('Wonder Woman', 'Entertaiment', 24.99, 350);
+
+CREATE TABLE Departments (
+	department_id INT(10) AUTO_INCREMENT NOT NULL,
+	department_name VARCHAR(100) NOT NULL,
+	over_head_costs DECIMAL(10,2) NOT NULL,
+	product_sales DECIMAL(10,2),
+	total_profit DECIMAL(10,2),
+	PRIMARY KEY(department_id)
+);
+
+INSERT INTO Departments (department_name, over_head_costs)
+VALUES ('Electronics', 1000),
+('Books', 2000),
+('Entertaiment', 500),
+('Clothing', 200),
+('Food', 100);
